@@ -1,0 +1,207 @@
+principal () {
+//interpolación de
+
+/*La siguiente función toma dos números enteros como parámetros.
+Haz que devuelva una cadena que contenga ambos enteros separados por un espacio.
+Por ejemplo, stringify(2, 3)debería volver '2 3'*/
+ 
+ Cadena  stringify ( int x, int y) {
+  devuelve '$x$y' ;
+  
+}
+
+//variables anulables
+
+//declaramos dos variables nombre y dirección
+//Un anulable Stringnombrado namecon el valor 'Jane'.
+//Un anulable Stringnombrado addresscon el valor null
+
+cuerda ? nombre =  'jane' ;
+cuerda ? dirección ;
+ 
+ //Operadores conscientes de nulo
+ 
+ //Dart ofrece algunos operadores útiles para manejar valores que pueden ser nulos. Uno es el ??=operador
+ //de signación, que asigna un valor a una variable solo si esa variable es actualmente nula:
+ 
+cuerda ?   foo =  'una cadena;
+cadena ? bar ; //= nulo
+ 
+//Intente sustituir los operadores ??=y ??para implementar el comportamiento descrito en el siguiente fragmento.
+cadena ? baz = foo?? bar;
+    //3-Operadores conscientes de nulos
+    // Declaración de una variable de cadena anulable llamada "foo" que tiene el valor "a string".
+    cadena ? foo = ' una cadena ';
+    // Declaración de una variable de cadena anulable llamada "bar" sin asignarle ningún valor.
+    cadena ? bar;
+    // Declaración de una variable de cadena anulable llamada "baz" que tiene el valor de "foo" si no es nulo, de lo contrario tiene el valor de "bar".
+    cadena ? baz = foo?? bar;
+    // Declaración de una función llamada "updateSomeVars" que actualiza la variable "bar" si es nula, asignándole el valor de "a string".
+    void actualizarAlgunosVars() {
+        barra?? = ' una cadena ';
+    }
+    //4-Acceso a propiedad condicional
+    // Este método debería devolver la versión en mayúsculas de `str`
+    // o nulo si `str` es nulo.
+¿Cadena? Mayúsculas(String? str) {
+  // Intenta acceder condicionalmente al método `Mayusculas` aquí.
+}
+    //5-Colecciones de literales
+    
+  //Dart tiene soporte integrado para listas, mapas y conjuntos. Puedes crearlos usando literales:
+ 
+  // Declaración de una lista inmutable de cadenas con los valores "a", "b" y "c".
+    final aListOfStrings = [ ' a ' , ' b ' , ' c ' ];
+    // Declaración de un conjunto inmutable de enteros con los valores 3, 4 y 5.
+    aSetOfInts final = { 3 , 4 , 5 };
+    // Declaración de un mapa inmutable de cadenas a enteros con una clave "myKey" y un valor 12.
+    aMapOfStringsToInts final = { ' myKey ' : 12 };
+    // Declaración de una lista vacía de números de punto flotante.
+    final anEmptyListOfDouble = < double > [];
+    // Declaración de un conjunto vacío de cadenas.
+    final anEmptySetOfString = < Cadena > {};
+    // Declaración de un mapa vacío de números de punto flotante a enteros.
+    anEmptyMapOfDoublesToInts final = < double , int > {};
+    //Sintaxis de flechas
+clase MiClase {
+ 
+  int valor1 = 2 ;
+  int valor2 = 3 ;
+  int valor3 = 5 ;
+  //Es posible que haya visto el =>símbolo en el código Dart.
+  //Esta sintaxis de flecha es una forma de definir una funcion que ejecuta
+  //la expresión a su derecha y devuelve su valor.
+  int obtener producto => valor1 * valor2 * valor3;
+  
+  // Incrementa valor1 en 1:
+  void incrementarValor1() => valor1++;
+  
+  // Une los elementos de la lista de cadenas con comas:
+  Cadena joinWithCommas ( Lista < Cadena > cadenas) => cadenas. unirse ( ' , ' );
+}
+//7-Cascadas
+clase BigObject {
+  int anInt = 0 ;
+  Cadena unaCadena = '' ;
+  Lista < doble > unaLista = [];
+  bool _hecho = falso ;
+  
+  // Setea _hecho en verdadero.
+  void todoTerminado() {
+    _hecho = verdadero ;
+  }
+}
+// Una función que recibe un objeto de la clase BigObject,
+//actualiza sus propiedades y luego lo devuelve.
+BigObject llenarBigObject ( BigObject obj) {
+  devolver objeto
+    ..anInt = 1
+    ..unaCadena = ' ¡ Cadena ! '
+    ..una lista. suma ( 3 )
+    .. todoTerminado();
+}
+//8-Getters y setters
+// Esta clase representa una excepción personalizada para precios inválidos
+clase InvalidPriceException {}
+// Esta clase representa un carrito de compras
+clase Carro de la compra {
+  // Lista privada de precios
+  Lista < doble > _precios = [];
+  
+  // Propiedad calculada que devuelve el total de precios en el carrito
+  double get total => _prices.fold(0, (e, t) => e + t);
+  
+  // Propiedad para establecer la lista de precios
+  establecer precios (Lista <doble> valor) {
+    // Se verifica que no haya precios negativos en la lista
+    if (valor.cualquiera((p) => p < 0)) {
+      // Si hay precios negativos, se lanza la excepción personalizada
+      throw InvalidPriceException();
+    }
+    
+    // Si no hay precios negativos, se establece la lista de precios
+    _precios = valor;
+  }
+  //9- Parámetros posicionales opcionales
+// Esta función toma un número entero obligatorio (a) y otros cuatro números enteros opcionales (b, c, d, e)
+// y devuelve una cadena que los une con comas.
+String joinWithCommas ( int a, [ int ? b, int ? c, int ? d, int ? e]) {
+var total = ' $ a ' ;
+if (b != null ) total = ' $ total ,$ b ' ; // Si b no es nulo, se concatena con una coma al total.
+if (c != null ) total = ' $ total ,$ c ' ; // Si c no es nulo, se concatena con una coma al total.
+if (d != null ) total = ' $ total ,$ d ' ; // Si d no es nulo, se concatena con una coma al total.
+if (e != null ) total = ' $ total ,$ e ' ; // Si e no es nulo, se concatena con una coma al total.
+devolución total; // Devuelve la cadena unida con comas.
+}
+//10-parámetros con nombre
+// Definición de la clase MyDataObject
+clase MiObjetoDatos {
+   int final anInt; // Propiedad de tipo entero
+   cadena final una cadena; // Propiedad de tipo cadena de caracteres
+   doble final aDoble; // Propiedad de tipo decimal
+  // Constructor de la clase
+  MiObjetoDatos ({
+    this .anInt = 1 , // Valor por defecto para la propiedad anInt
+    this .aString = ' ¡ Viejo ! ' , // Valor por defecto para la propiedad aString
+    this .aDouble = 2.0 , // Valor por defecto para la propiedad aDouble
+  });
+  // Método que devuelve una copia de la instancia actual con las propiedades actualizadas
+  MyDataObject copyWith ({ int ? newInt, String ? newString, double ? newDouble}) {
+    devolver MyDataObject (
+      anInt : newInt ?? this .anInt, // Si newInt es nulo, se mantiene el valor actual
+      unaCadena : nuevaCadena ?? this .aString, // Si newString es nulo, se mantiene el valor actual
+      aDoble : nuevoDoble ?? this .aDouble, // Si newDouble es nulo, se mantiene el valor actual
+    );
+  }
+}
+}
+//11 Excepciones
+// Definición de un tipo de función que no devuelve nada (void)
+typedef VoidFunction = función vacía ();
+// Definición de una excepción que incluye un mensaje
+clase ExcepciónConMensaje {
+   mensaje de cadena final ;
+  const ExceptionWithMessage (este .mensaje);
+}
+// Clase abstracta que define una interfaz para un (registro de eventos)
+Registrador de clase abstracta {
+  void logException ( Escriba t, [ String ? msg]); // Método que registra una excepción
+  void hechoRegistro(); // Método que se llama cuando se termina de registrar eventos
+}
+// Función que ejecuta una función dada y registra cualquier excepción que se lance
+void tryFunction ( VoidFunction no confiable, Logger logger) {
+  prueba {
+    desconfiado (); // Ejecuta la funcion dada
+  } on ExceptionWithMessage catch (e) { // Si se lanza una excepción ExceptionWithMessage
+    registrador logException (e.runtimeType, e.message); // Registra la excepción y su mensaje
+  } on Exception { // Si se lanza cualquier otra excepción
+    registrador logException (Excepción); // Registra la excepción
+  } finalmente {
+    registrador hechoRegistro (); // Llama al metodo que indica que se termino de registrar eventos
+  }
+}
+//12-Usando esto en un constructor
+// Clase que representa un objeto de datos con un entero, una cadena y un numero de coma flotante
+clase MiClase {
+   int final anInt; // entero inmutable
+   cadena final una cadena; // cadena inmutable
+   doble final aDoble; // número de coma flotante inmutable
+  // Constructor que toma un entero, una cadena y un número de coma flotante
+  MiClase ( este .anInt, este .aString, este .aDouble);
+}
+//13-Listas de inicializadores
+// Definir la clase FirstTwoLetters
+clase PrimerasDosLetras {
+  // Declara dos variables finales de tipo String que almacenan las primeras dos letras del argumento
+   Cadena final letraUno;
+   cadena final letra dos;
+  // Constructor de la clase, recibe un argumento "palabra" de tipo String
+  FirstTwoLetters ( palabra de cadena )
+      // El método "assert" se utiliza para verificar que la longitud de la palabra sea al menos dos caracteres
+      : afirmar (palabra.longitud >= 2 ),
+        // Asigna el primer caracter de la palabra al atributo "letterOne"
+        letraUno = palabra[ 0 ],
+        // Asigna el segundo caracter de la palabra al atributo "letterTwo"
+        letraDos = palabra[ 1 ];
+}
+}
