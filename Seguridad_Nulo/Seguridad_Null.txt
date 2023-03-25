@@ -1,0 +1,102 @@
+//Tipos anulables y no anulables
+//todos los tipos son no anulables de forma predeterminada.
+// Por ejemplo, si tiene una variable de tipo String, siempre contendrá una cadena.
+//Tipos que no aceptan valores NULL
+
+vacío principal() {
+  en un;
+  a = nulo;
+  imprimir('a es $a.');
+}
+ 
+// Parámetros de tipo anulable para genéricos
+
+//Los parámetros de tipo para genéricos también pueden ser anulables o no anulables.
+vacío principal() {
+  List<String> aListOfStrings = ['uno', 'dos', 'tres'];
+  List<String> aNullableListOfStrings;
+  List<String> aListOfNullableStrings = ['uno', nulo, 'tres'];
+
+  print('aListOfStrings es $aListOfStrings.');
+  print('aNullableListOfStrings es $aNullableListOfStrings.');
+  print('aListOfNullableStrings es $aListOfNullableStrings.');
+}
+
+//Operadores conscientes de nulo
+
+/* Para manejar valores potenciales nulos, puede usar el operador de acceso
+a la propiedad condicional ( ?.) o los operadores de fusión nula ( ??)
+para acceder condicionalmente a una propiedad o proporcionar un valor
+predeterminado si, nullrespectivamente.*/
+
+//Acceso a propiedad condicional
+
+//En el stringLengthmétodo para corregir el error y devolver la longitud de la cadena o nullsi es null:
+
+¿En t? stringLength(¿Cadena? NullableString) {
+  volver nullableString?.longitud;
+}
+
+//Operadores de fusion nula
+
+//operadores para implementar updateStoredValue
+
+Tienda de clase abstracta {
+  ¿En t? valorNullableAlmacenado;
+
+  /// Si [storedNullableValue] es actualmente `null`,
+  /// establecerlo en el resultado de [calculateValue]
+  /// o `0` si [calculateValue] devuelve `null`
+  void actualizarValorAlmacenado() {
+    valorAlmacenadoNullable ??= calcularValor() ?? 0;
+  }
+
+  
+  /// Calcula un valor para usar,
+  /// potencialmente `nulo`.
+  ¿En t? calcularValor();
+}
+
+// Comprobación nula
+
+int obtenerLongitud(¿Cadena? str) {
+  // Agregar verificación nula aquí
+
+  return str.longitud;
+}
+
+vacío principal() {
+  print(getLength('¡Esto es una cadena!'));
+}
+
+//Promoción con excepciones
+
+int obtenerLongitud(¿Cadena? str) {
+  // Intenta lanzar una excepción aquí si `str` es nulo.
+
+  return str.longitud;
+}
+
+vacío principal() {
+  imprimir(obtenerLongitud(nulo));
+}
+
+//Referencias circulares tardias
+//El siguiente código tiene dos objetos que necesitan mantener referencias no anulables entre sí. Intente usar la latepalabra clave para corregir este código.
+
+equipo de clase {
+  Entrenador final Entrenador;
+}
+
+entrenador de clase {
+  equipo final del equipo;
+}
+
+vacío principal() {
+  final miEquipo = Equipo();
+  miEntrenador final = Entrenador();
+  miEquipo.entrenador = miEntrenador;
+  miEntrenador.equipo = miEquipo;
+
+  print('¡Todo listo!');
+}
